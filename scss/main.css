@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Avenir Next;
+  src: url(../../../assets/Font/AvenirNextLTPro-Regular.woff) format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Avenir Next;
+  src: url(../../../assets/Font/AvenirNextLTPro-Demi.woff) format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Avenir Next;
+  src: url(../../../assets/Font/AvenirNextLTPro-Bold.woff) format("woff");
+  font-weight: 700;
+}
+body {
+  font-family: "Avenir Next";
+}
+
+.nav__link {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.nav {
+  background-color: #323232;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 12vh;
+  width: 100%;
+}
+.nav__logo {
+  width: 7rem;
+}/*# sourceMappingURL=main.css.map */
