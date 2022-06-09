@@ -22,10 +22,15 @@ body {
   font-family: "Avenir Next";
 }
 
-.nav__link {
-  font-size: 14px;
+.nav__options-link {
+  font-size: 1rem;
   line-height: 22px;
-  font-weight: 400;
+}
+
+.hero-txt {
+  font-size: 1.5rem;
+  line-height: 22px;
+  font-weight: 700;
 }
 
 .nav {
@@ -35,9 +40,63 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  height: 12vh;
   width: 100%;
 }
 .nav__logo {
   width: 7rem;
+  margin-top: 1rem;
+}
+.nav__options {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-bottom: 0rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav__options #active {
+  border-bottom: 3px solid #FFFFFF;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.nav__options-link {
+  width: 50%;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  color: #E1E1E1;
+  text-decoration: none;
+}
+.nav__options-link:hover {
+  border-bottom: 3px solid #FFFFFF;
+  color: #FFFFFF;
+}
+.nav__options-link a {
+  text-decoration: none;
+  color: #E1E1E1;
+}
+
+.hero {
+  height: 26vh;
+  margin: 0;
+  padding: 0;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/Images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.hero__img__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}
+.hero__img__overlay h1 {
+  color: #FFFFFF;
+  margin: 0;
+  padding-left: 1rem;
 }/*# sourceMappingURL=main.css.map */
