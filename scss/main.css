@@ -45,6 +45,17 @@ body {
   font-weight: 400;
 }
 
+.footer-text {
+  font-size: 0.875rem;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.footer-label-text {
+  font-size: 0.625rem;
+  line-height: 20px;
+}
+
 .nav {
   background-color: #323232;
   box-sizing: border-box;
@@ -155,4 +166,46 @@ body {
   height: 50.625vw;
   width: 100%;
   padding-bottom: 1rem;
+}
+
+.footer {
+  background-color: #323232;
+  color: #FAFAFA;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+.footer__title {
+  padding: 2rem 1rem 0 1rem;
+  margin: 0;
+}
+.footer__icon {
+  padding: 1.5rem 1rem 0 1rem;
+  display: flex;
+  justify-content: flex-start;
+  height: 1.5rem;
+}
+.footer__icon img {
+  margin-right: 1.5rem;
+}
+.footer__contact {
+  padding: 1.5rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact-name p {
+  margin: 0;
+  padding: 0;
+}
+.footer__contact-email a {
+  text-decoration: none;
+  color: #FAFAFA;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+.footer__logo {
+  margin: 5rem 0 0 1rem;
+  color: #FAFAFA;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,56 @@
+@use './colors' as *;
+
+.footer{
+    background-color: $bandsite-black;
+    color: $alabaster;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    
+
+    &__title{
+        padding: 2rem 1rem 0 1rem;
+        margin: 0;
+    }
+    &__icon{
+        padding: 1.5rem 1rem 0 1rem;
+        display: flex;
+        justify-content: flex-start;
+        height: 1.5rem;
+        
+        img{
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__contact{
+        padding: 1.5rem 1rem 0 1rem;
+        display: flex;
+        flex-direction: column;
+
+        &-name{
+            p{
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &-email{
+            a {
+                text-decoration: none;
+                color: $alabaster;
+            }
+        }
+        
+    }
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo{
+        margin: 5rem 0 0 1rem;
+        color: $alabaster;
+    }
+}
