@@ -27,8 +27,18 @@ body {
     line-height: 22px;
 }
 
-.hero-txt{
+.section-header, .page-header {
     font-size: 1.5rem;
     line-height: 22px;
     font-weight: 700;
+}
+.section-subheader{
+    font-size: 0.875rem;
+    line-height: 22px;
+    font-weight: 600;
+}
+.body-text{
+    font-size: 0.813rem;
+    line-height: 18px;
+    font-weight: 400;
 }
