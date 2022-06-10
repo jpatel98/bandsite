@@ -1,11 +1,11 @@
-/* media query for mobile*/
+// media query for mobile
 @mixin mobile {
     @media only screen and (max-width: 767px) {
         @content;
     }
 }
 
-/* media query for tablet*/
+// media query for tablet
 @mixin tablet {
     @media only screen and (min-width: 768px) {
         @content;
