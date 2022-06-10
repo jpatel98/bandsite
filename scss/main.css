@@ -3,6 +3,8 @@ body {
   padding: 0;
 }
 
+/* media query for mobile*/
+/* media query for tablet*/
 @font-face {
   font-family: Avenir Next;
   src: url(../../../assets/Font/AvenirNextLTPro-Regular.woff) format("woff");
@@ -58,45 +60,49 @@ body {
 
 .nav {
   background-color: #323232;
-  box-sizing: border-box;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 .nav__logo {
-  width: 7rem;
+  display: flex;
+  justify-content: center;
   margin-top: 1rem;
 }
+.nav__logo-img {
+  width: 7.5rem;
+  margin-bottom: 1rem;
+}
 .nav__options {
+  list-style: none;
   width: 100%;
   margin-top: 0.5rem;
-  padding-bottom: 0rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav__options #active {
-  border-bottom: 3px solid #FFFFFF;
-  font-weight: 700;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-.nav__options-link {
-  width: 50%;
+.nav__options-item {
+  width: 50vw;
   text-align: center;
-  padding-bottom: 0.5rem;
-  color: #E1E1E1;
-  text-decoration: none;
 }
-.nav__options-link:hover {
+.nav__options-item-link {
+  text-decoration: none;
+  display: block;
+  padding-bottom: 0.75rem;
+  color: #E1E1E1;
+}
+.nav__options-item-link:hover {
   border-bottom: 3px solid #FFFFFF;
   color: #FFFFFF;
 }
-.nav__options-link a {
-  text-decoration: none;
-  color: #E1E1E1;
+.nav__options-item #active {
+  color: #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
 }
 
 .hero {
