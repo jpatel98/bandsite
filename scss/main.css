@@ -105,6 +105,41 @@ body {
   border-bottom: 3px solid #FFFFFF;
 }
 
+@media only screen and (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    height: 10vh;
+  }
+  .nav__logo {
+    margin-top: 0px;
+    padding: 1rem;
+  }
+  .nav__logo-img {
+    width: 7.5rem;
+    margin-top: 1.5rem;
+  }
+  .nav__options {
+    justify-content: left;
+    align-items: center;
+    margin-top: 0px;
+  }
+  .nav__options-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 5rem;
+    border-bottom: unset;
+    margin-left: 3.5rem;
+  }
+  .nav__options-item-link {
+    width: 5rem;
+    display: block;
+    margin-top: 0.7125rem;
+    padding-bottom: 1.4rem;
+    padding-top: 1.5rem;
+    border-bottom: 0.4125rem solid transparent;
+  }
+}
 .hero {
   height: 30vh;
   margin: 0;

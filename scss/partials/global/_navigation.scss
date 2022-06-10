@@ -56,3 +56,46 @@
 
     }
 }
+
+// Tablet layout
+@include tablet {
+    .nav {
+        flex-direction: row;
+        height: 10vh;
+
+        &__logo{
+            margin-top: 0px;
+            padding: 1rem;
+
+            &-img{
+                width: 7.5rem;
+                margin-top: 1.5rem;
+            }
+        }
+
+        &__options {
+            justify-content: left;
+            align-items: center;
+            margin-top: 0px;
+            
+            &-item{
+                display: flex;
+                align-items: center;
+                text-align: center;
+                width: 5rem;
+                border-bottom: unset;
+                margin-left: 3.5rem;
+                &-link {
+                    width: 5rem;
+                    display: block;
+                    margin-top: .7125rem;
+                    padding-bottom: 1.4rem;
+                    padding-top: 1.5rem;
+                    border-bottom: 0.4125rem solid transparent;
+                }
+
+            }
+        }
+    }
+}
+
