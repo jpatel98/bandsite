@@ -77,7 +77,7 @@ body {
 
   .section-header {
     font-size: 2.25rem;
-    line-height: 22px;
+    line-height: 44px;
     font-weight: 700;
   }
 
@@ -290,6 +290,25 @@ body {
   padding-bottom: 1rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .gallery {
+    padding: 0 2.25rem;
+  }
+  .gallery__title {
+    padding: 3rem 0 2.25rem 0;
+  }
+  .gallery__images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gallery__images-item {
+    height: 16.40625vw;
+    width: 31.5%;
+    padding: 0.85rem 0;
+  }
+}
 .footer {
   background-color: #323232;
   color: #FAFAFA;
