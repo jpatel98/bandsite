@@ -47,6 +47,10 @@ body {
     font-size: 0.875rem;
     line-height: 22px;
     text-decoration: none;
+
+    &-bold{
+        font-weight: 600;
+    }
 }
 
 .footer-label-text{
@@ -83,4 +87,16 @@ body {
         line-height: 22px;
         font-weight: 400;
     }
+    .footer-text{
+    font-size: 0.875rem;
+    line-height: 20px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.footer-label-text{
+    font-size: 0.875rem;
+    line-height: 20px;
+    
+}
 }
