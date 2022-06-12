@@ -47,3 +47,10 @@
         }
     }
 }
+
+// desktop layout
+@include desktop {
+    .gallery {
+        padding: 2.25rem 5rem;
+    }
+}

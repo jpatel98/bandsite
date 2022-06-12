@@ -46,3 +46,17 @@
             
     }
 }
+
+// desktop layout
+@include desktop {
+    .hero{
+        &__img{
+            &-overlay{
+                &-header{
+                    padding-left: 5rem;
+                }
+            }
+        }
+            
+    }
+}

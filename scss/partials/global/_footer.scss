@@ -74,8 +74,9 @@
 
         &-container{
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
+            
         }
         &__contact{
             &-address{
@@ -97,5 +98,27 @@
             text-align: center;
 
         }   
+    }
+}
+
+// desktop layout
+@include desktop {
+    .footer {
+        padding: 0 5rem 0 5rem;
+        &__title{
+            padding: 3rem 0 2.25rem 0;
+        }
+        &-container{
+            justify-content: flex-start;
+            
+        }
+        &__contact{
+            padding: 0 3rem 1rem 0;
+        }
+        &-label-text{
+            text-align: left;
+            
+
+        }
     }
 }
