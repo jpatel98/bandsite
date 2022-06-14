@@ -163,16 +163,12 @@ body {
 @media only screen and (min-width: 768px) {
   .nav {
     flex-direction: row;
-    height: 10vh;
   }
   .nav__logo {
-    margin-top: 0px;
-    padding: 2.25rem 0 0 2.25rem;
-    margin-bottom: 3rem;
+    padding: 0 0 0 2.25rem;
   }
   .nav__logo-img {
     width: 7.5rem;
-    margin-top: 1.5rem;
   }
   .nav__options {
     justify-content: left;
@@ -442,6 +438,7 @@ body {
     padding: 0 3rem 1rem 0;
   }
   .footer-label-text {
-    text-align: left;
+    display: flex;
+    justify-content: flex-start;
   }
 }/*# sourceMappingURL=main.css.map */
