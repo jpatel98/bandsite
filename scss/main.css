@@ -129,6 +129,7 @@ body {
 }
 .nav__logo-img {
   width: 7.5rem;
+  margin-bottom: 1rem;
 }
 .nav__options {
   list-style: none;
@@ -169,6 +170,7 @@ body {
   }
   .nav__logo-img {
     width: 7.5rem;
+    margin-bottom: 0;
   }
   .nav__options {
     justify-content: left;
