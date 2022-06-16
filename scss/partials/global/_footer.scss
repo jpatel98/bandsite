@@ -85,7 +85,6 @@
         }
         &__logo {
             position: relative;
-
             &-img{
                 position: absolute;
                 bottom: 23rem;
@@ -115,9 +114,13 @@
         &__contact{
             padding: 0 3rem 1rem 0;
         }
+        &__logo{
+            margin: 5rem 0 0 0rem;
+        }
         &-label-text{
             display: flex;
             justify-content: flex-start;
+            align-content: flex-start;
         }
     }
 }
