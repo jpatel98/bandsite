@@ -7,7 +7,7 @@
     background-size: cover;
     color: $white;
     &__opacity {
-        background-color: rgba($color: black, $alpha: 0.5);
+        background-color: rgba($color: $bandsite-darkblack, $alpha: 0.5);
         height: inherit;
         width: inherit;
         display: flex;
@@ -23,6 +23,7 @@
     }
     &__title {
         margin: 0;
+        
     }
 }
 
@@ -31,7 +32,12 @@
     .hero{
         &__opacity {
             padding: 2.25rem;
+            flex-direction: column;
         }
+        &__title {
+            &-song{
+                width: 20vw;
+            }
     }
 }
 
@@ -39,6 +45,17 @@
     .hero{
         &__opacity {
             padding: 5rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__container {
+            width: 50%;
+        }
+        &__title {
+            &-song{
+                width: 50%;
+            }
         }
     }
 }
