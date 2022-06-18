@@ -1,0 +1,61 @@
+@use '../global/colors' as *;
+@use '../global/breakpoints' as *;
+
+.hero {
+    background-image: url(../assets/Images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    color: $white;
+    &__opacity {
+        background-color: rgba($color: $bandsite-darkblack, $alpha: 0.5);
+        height: inherit;
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.5rem 1rem;
+        margin: 0;
+    }
+
+    &__container{
+        padding: 0;
+        margin: 0;
+    }
+    &__title {
+        margin: 0;
+        
+    }
+}
+
+
+@include tablet {
+    .hero{
+        &__opacity {
+            padding: 2.25rem;
+            flex-direction: column;
+        }
+        &__title {
+            &-song{
+                width: 50vw;
+            }
+    }
+}
+
+@include desktop {
+    .hero{
+        &__opacity {
+            padding: 5rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__container {
+            width: 50%;
+        }
+        &__title {
+            &-song{
+                width: 50%;
+            }
+        }
+    }
+} }
