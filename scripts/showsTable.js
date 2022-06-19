@@ -63,7 +63,7 @@ function displayShows(arr) {
     infoDiv.appendChild(locationsTitle);
 
 
-    for(let key in arrDates) {
+    for(let i=0; i<arrDates.length; i++) {
 
         //container div
         const showsParent = document.createElement("div");
@@ -82,7 +82,7 @@ function displayShows(arr) {
         const dateShow = document.createElement("h3");
         dateShow.classList.add("shows__date-actual");
        dateShow.classList.add("body-text");
-        dateShow.innerText = arrDates[key]["date"];
+        dateShow.innerText = arrDates[i]["date"];
         showsParent.appendChild(dateShow);
 
         //Venue heading
@@ -96,7 +96,7 @@ function displayShows(arr) {
         const venueShow = document.createElement("h3");
         venueShow.classList.add("shows__venue-actual");
         venueShow.classList.add("body-text");
-        venueShow.innerText = arrDates[key]["venue"];
+        venueShow.innerText = arrDates[i]["venue"];
         showsParent.appendChild(venueShow);
 
         //Location heading
@@ -110,7 +110,7 @@ function displayShows(arr) {
         const locationShow = document.createElement("h3");
         locationShow.classList.add("shows__location-actual");
         locationShow.classList.add("body-text");
-        locationShow.innerText = arrDates[key]["location"];
+        locationShow.innerText = arrDates[i]["location"];
         showsParent.appendChild(locationShow);
 
         //Button

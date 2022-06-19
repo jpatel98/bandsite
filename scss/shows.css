@@ -224,13 +224,6 @@ body {
 @media only screen and (min-width: 768px) {
   .hero__opacity {
     padding: 2.25rem;
-<<<<<<< HEAD
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .hero__opacity {
-    padding: 5rem;
-=======
     flex-direction: column;
   }
   .hero__title-song {
@@ -271,6 +264,7 @@ body {
 .shows__date-actual {
   margin: 0.5rem 0 1rem 0;
   font-weight: 600;
+  color: #323232;
 }
 .shows__venue {
   color: #AFAFAF;
@@ -360,7 +354,6 @@ body {
   .shows__container {
     padding: 0 5rem;
     width: 100%;
->>>>>>> sprint-2
   }
 }
 .footer {
