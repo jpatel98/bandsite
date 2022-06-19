@@ -8,8 +8,10 @@
     <title>BandSite</title>
 </head>
 <body>
+
     <!-- header -->
     <header>
+
         <!-- Navigation -->
         <nav class="nav">
                 <a href="index.html" class="nav__logo">
@@ -33,11 +35,11 @@
                 </div>
             </div>
         </section>
-
     </header>
 
     <!-- Main -->
     <main>
+
         <!-- About section -->
         <section class="about">
             <h2 class="about__title section-header">
@@ -107,6 +109,22 @@
                 <img class="gallery__images-item" src="./assets/Images/Photo-gallery-9.jpg" alt="Gallery image 9">
             </div>
         </section>
+
+        <!--Comments Section-->
+        <section class="comments">
+            <h2 class="comments__title section-header">Join the Conversation</h2>
+            <div class="comments__input">
+                <img class="comments__input-img" src="./assets/Images/Mohan-muruge.jpg" alt="User photo">
+                <form class="comments__input-info-form">
+                    <p class="body-text">NAME</p>
+                    <textarea class="comments__input-info-form-name" name="name" placeholder="Enter your name"></textarea>
+                    <p class="body-text">COMMENT</p>
+                    <textarea class="comments__input-info-form-comment" name="comment" placeholder="Add a new comment"></textarea>
+                    <button class="comments__input-info-form-btn">COMMENT</button>
+                </form>
+            </div>
+            <div class="comments__dynamic"></div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -120,6 +138,7 @@
             </div>
         </div>
         <div class="footer-container">
+            
             <!-- Contact 1 -->
             <div class="footer__contact">
                 <div class="footer__contact-name footer-text-bold">
@@ -171,6 +190,6 @@
             <p class="footer-label-text">Copyright The Bees Knees &copy; 2021 All Rights Reserved</p>
         </div>
     </footer>
-
+<script src="./scripts/comments.js"></script>
 </body>
 </html>    
