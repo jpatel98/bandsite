@@ -1,11 +1,10 @@
 @use './breakpoints' as *;
 
-@include mobile {
-    body{
-        margin: 0;
-        padding: 0;
+
+body{
+    margin: 0;
+    padding: 0;
     }
-}
 @include tablet {
     body{
         margin: 0;
