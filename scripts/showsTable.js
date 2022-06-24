@@ -123,3 +123,4 @@ function displayShows(arr) {
 }
 
 displayShows(arrDates);
+

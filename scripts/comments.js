@@ -1,30 +1,7 @@
-const commentsArr = [{
-    name: "Connor Walton",
-    date: "02/17/2021",
-    comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    }, 
-    {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    }, 
-    {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Every time I see him I feel instantly happy! He’s definitely my favorite ever!"
-    }];
 
-//TIME STAMP
-let dateStamp = new Date();
-let mm = String(dateStamp.getMonth() + 1).padStart(2, "0");
-let dd = String(dateStamp.getDate()).padStart(2,"0");
-let yyyy = dateStamp.getFullYear();
+///// ++++++++*********NEW SECTION++++++++*********
 
-dateStamp = mm + "/" + dd + "/" + yyyy;
-
-const formEl = document.querySelector(".comments__input-info-form");
-
-// Function to display comments from the given array
+// Function to display comments from an array.
 function displayComment(arr) {
 
     const commentDiv = document.querySelector(".comments__dynamic");
@@ -44,18 +21,18 @@ function displayComment(arr) {
         mainDiv.appendChild(subDiv);
 
         const mainName = document.createElement("h2");
-        mainName.innerText = commentsArr[i]["name"];
+        mainName.innerText = arr[i]["name"];
         mainName.classList.add("comments__new-name");
         mainName.classList.add("body-text");
         subDiv.appendChild(mainName);
 
         const mainTime = document.createElement("p");
-        mainTime.innerText = commentsArr[i]["date"];
+        mainTime.innerText = new Date (arr[i].timestamp).toLocaleDateString("en-US");
         mainTime.classList.add("comments__new-time");
         subDiv.appendChild(mainTime);
 
         const mainP = document.createElement("p");
-        mainP.innerText = commentsArr[i]["comment"];
+        mainP.innerText = arr[i]["comment"];
         mainP.classList.add("comments__new-comment");
         subDiv.appendChild(mainP);
 
@@ -63,59 +40,49 @@ function displayComment(arr) {
     }
 };
 
-displayComment(commentsArr);
+//GET comments from an API
+const api = `https://project-1-api.herokuapp.com/`;
+const api_key =  "?api_key=65490e1c-7555-4d3f-ac91-0f4f9db19dda";
 
+const arr = axios.get(api + 'comments' + api_key)
+arr.then((result) => {
+    let commentData = result.data;
+    console.log(commentData);
+    // calling the display comment function
+    displayComment(
+        commentData.sort(function(a, b) {
+          return b.timestamp - a.timestamp;
+        })
+      );
+})
+arr.catch((error) => {
+    console.log(error);
+});
+
+const form = document.querySelector(".comments__input-info-form");
 
 //Add new comment onclick
 
-formEl.addEventListener("submit", newPost => {
-
+form.addEventListener("submit", newPost => {
     newPost.preventDefault();
-    const newComment = {};
-    
-    newComment.name = newPost.target.name.value;
-    newComment.comment = newPost.target.comment.value;
 
-    const commentDiv = document.querySelector(".comments__dynamic");
-    const mainDiv = document.createElement("div");
-    mainDiv.classList.add("comments__new");
-    mainDiv.classList.add("body-text")
-    commentDiv.appendChild(mainDiv);
-
-    const mainImg = document.createElement("img");
-    mainImg.classList.add("comments__new-image");
-    mainDiv.appendChild(mainImg);
-
-    const subDiv = document.createElement("div");
-    subDiv.classList.add("comments__container");
-    mainDiv.appendChild(subDiv);
-
-    const mainName = document.createElement("h2");
-    mainName.innerText = newComment.name;
-    mainName.classList.add("comments__new-name");
-    mainName.classList.add("body-text");
-    subDiv.appendChild(mainName);
-
-    const mainTime = document.createElement("p");
-    mainTime.innerText = dateStamp;
-    mainTime.classList.add("comments__new-time");
-    subDiv.appendChild(mainTime);
-
-    const mainP = document.createElement("p");
-    mainP.innerText = newComment.comment;
-    mainP.classList.add("comments__new-comment");
-    subDiv.appendChild(mainP);
-    commentDiv.appendChild(mainDiv);
-    
-    
-    //MAKES NEW COMMENTS GO TO THE TOP
-    let toTheTop = document.querySelector(".comments__dynamic");
-    toTheTop.insertBefore(mainDiv, toTheTop.childNodes[0]);
-
-    //CLEARS INPUT ON SUBMIT
-    let formInput = document.querySelector(".comments__input-info-form")
-    formInput.reset();
-    
-});  
-
-
+    const newComment = axios.post(api + 'comments' + api_key,
+    {
+        name: newPost.target.name.value,
+        comment: newPost.target.comment.valuex
+    }
+    );
+    newComment.then(() => {
+        let postedComment = axios.get(api + 'comments' + api_key)
+        postedComment.then(result=> {
+           let postedCommentData = result.data;
+            displayComment(
+                postedCommentData.sort(function(a, b) {
+                return b.timestamp - a.timestamp;
+              })
+            );
+        });
+    })
+// Clear form on submit
+form.reset();
+});
