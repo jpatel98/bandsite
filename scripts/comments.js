@@ -1,10 +1,14 @@
+const form = document.querySelector(".comments__input-info-form");
 
-///// ++++++++*********NEW SECTION++++++++*********
+// API and API key
+const api = `https://project-1-api.herokuapp.com/`;
+const api_key =  "?api_key=65490e1c-7555-4d3f-ac91-0f4f9db19dda";
 
 // Function to display comments from an array.
 function displayComment(arr) {
 
     const commentDiv = document.querySelector(".comments__dynamic");
+    commentDiv.innerHTML = "";
 
     for(let i = 0; i < arr.length; i++) {
 
@@ -40,49 +44,47 @@ function displayComment(arr) {
     }
 };
 
-//GET comments from an API
-const api = `https://project-1-api.herokuapp.com/`;
-const api_key =  "?api_key=65490e1c-7555-4d3f-ac91-0f4f9db19dda";
 
-const arr = axios.get(api + 'comments' + api_key)
-arr.then((result) => {
-    let commentData = result.data;
-    console.log(commentData);
-    // calling the display comment function
-    displayComment(
-        commentData.sort(function(a, b) {
-          return b.timestamp - a.timestamp;
-        })
-      );
-})
-arr.catch((error) => {
-    console.log(error);
-});
-
-const form = document.querySelector(".comments__input-info-form");
 
 //Add new comment onclick
 
 form.addEventListener("submit", newPost => {
     newPost.preventDefault();
-
-    const newComment = axios.post(api + 'comments' + api_key,
+                
+    let newComment = axios.post(api + 'comments' + api_key,
     {
         name: newPost.target.name.value,
-        comment: newPost.target.comment.valuex
+        comment: newPost.target.comment.value
     }
     );
-    newComment.then(() => {
-        let postedComment = axios.get(api + 'comments' + api_key)
-        postedComment.then(result=> {
-           let postedCommentData = result.data;
-            displayComment(
-                postedCommentData.sort(function(a, b) {
-                return b.timestamp - a.timestamp;
-              })
-            );
-        });
+
+    newComment.then((result) => {
+        let arr = axios.get(api + 'comments' + api_key)
+            arr.then(result=> {
+                let postedCommentData = result.data;
+                displayComment(postedCommentData.reverse());
+            });
+            arr.catch((error) => {
+                console.log(error);
+            });
     })
-// Clear form on submit
-form.reset();
+
+    // Clear form on submit
+    let formInput = document.querySelector(".comments__input-info-form");
+    formInput.reset();
+});
+
+
+//GET comments from an API
+
+const arr = axios.get(api + 'comments' + api_key)
+arr.then(result => {
+    let commentData = result.data;
+    // calling the display comment function
+    displayComment(
+        commentData.reverse()
+    );
+})
+arr.catch((error) => {
+    console.log(error);
 });

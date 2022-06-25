@@ -1,30 +1,5 @@
-const arrDates = [{
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA"
-}, { 
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA"
-}, {   
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA"
-}, {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA"  
-}, {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA"
-}, {
-    date: "Wed Dec 15 2021",
-    venue: "Pres Club",
-    location: "San Francisco, CA"
-}];
-
-
+//*********++++++++UPDATED VERSION USING API++++++++*********
+// Function to display show dates from an array.
 function displayShows(arr) {
     const shows = document.querySelector(".shows")
     const mainEl = document.querySelector("main");
@@ -63,7 +38,7 @@ function displayShows(arr) {
     infoDiv.appendChild(locationsTitle);
 
 
-    for(let i=0; i<arrDates.length; i++) {
+    for(let i=0; i<arr.length; i++) {
 
         //container div
         const showsParent = document.createElement("div");
@@ -82,9 +57,10 @@ function displayShows(arr) {
         const dateShow = document.createElement("h3");
         dateShow.classList.add("shows__date-actual");
        dateShow.classList.add("body-text");
-        dateShow.innerText = arrDates[i]["date"];
+        let showDates = parseInt(arr[i].date);     
+        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }; 
+        dateShow.innerText = new Date (showDates).toLocaleDateString("en-US", options);
         showsParent.appendChild(dateShow);
-
         //Venue heading
         const venueTitle = document.createElement("h4");
         venueTitle.classList.add("shows__venue");
@@ -96,7 +72,7 @@ function displayShows(arr) {
         const venueShow = document.createElement("h3");
         venueShow.classList.add("shows__venue-actual");
         venueShow.classList.add("body-text");
-        venueShow.innerText = arrDates[i]["venue"];
+        venueShow.innerText = arr[i].place; // need to change
         showsParent.appendChild(venueShow);
 
         //Location heading
@@ -110,7 +86,7 @@ function displayShows(arr) {
         const locationShow = document.createElement("h3");
         locationShow.classList.add("shows__location-actual");
         locationShow.classList.add("body-text");
-        locationShow.innerText = arrDates[i]["location"];
+        locationShow.innerText = arr[i]["location"]; // need to change
         showsParent.appendChild(locationShow);
 
         //Button
@@ -122,5 +98,16 @@ function displayShows(arr) {
     }
 }
 
-displayShows(arrDates);
 
+//Getting show data from the API
+const api = `https://project-1-api.herokuapp.com/`;
+const api_key =  "?api_key=65490e1c-7555-4d3f-ac91-0f4f9db19dda";
+
+const showDatesArr = axios.get(api + 'showdates' + api_key)
+showDatesArr.then(result => {
+    displayShows(result.data);
+    console.log(result.data)
+});
+showDatesArr.catch(error => {
+    console.log(error)
+});
