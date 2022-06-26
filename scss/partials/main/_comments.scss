@@ -125,8 +125,6 @@
         width: 100%;
     }
 }
-
-
 // tablet layout
 @include tablet{
     .comments {
@@ -154,11 +152,9 @@
         &__new{
             padding: 2.25rem;
             box-sizing: border-box;
-     
         }
     }
 }
-
 // desktop layout
 @include desktop{
     .comments {

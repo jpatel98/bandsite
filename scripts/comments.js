@@ -6,12 +6,10 @@ const api_key =  "?api_key=65490e1c-7555-4d3f-ac91-0f4f9db19dda";
 
 // Function to display comments from an array.
 function displayComment(arr) {
-
     const commentDiv = document.querySelector(".comments__dynamic");
     commentDiv.innerHTML = "";
 
     for(let i = 0; i < arr.length; i++) {
-
         const mainDiv = document.createElement("div");
         mainDiv.classList.add("comments__new");
         mainDiv.classList.add("body-text")
@@ -31,7 +29,8 @@ function displayComment(arr) {
         subDiv.appendChild(mainName);
 
         const mainTime = document.createElement("p");
-        mainTime.innerText = new Date (arr[i].timestamp).toLocaleDateString("en-US");
+        let commentDate = new Date (arr[i].timestamp).toLocaleDateString("en-US");
+        mainTime.innerText = commentDate;
         mainTime.classList.add("comments__new-time");
         subDiv.appendChild(mainTime);
 
@@ -44,10 +43,7 @@ function displayComment(arr) {
     }
 };
 
-
-
 //Add new comment onclick
-
 form.addEventListener("submit", newPost => {
     newPost.preventDefault();
                 
@@ -57,7 +53,6 @@ form.addEventListener("submit", newPost => {
         comment: newPost.target.comment.value
     }
     );
-
     newComment.then((result) => {
         let arr = axios.get(api + 'comments' + api_key)
             arr.then(result=> {
@@ -68,7 +63,6 @@ form.addEventListener("submit", newPost => {
                 console.log(error);
             });
     })
-
     // Clear form on submit
     let formInput = document.querySelector(".comments__input-info-form");
     formInput.reset();
@@ -76,7 +70,6 @@ form.addEventListener("submit", newPost => {
 
 
 //GET comments from an API
-
 const arr = axios.get(api + 'comments' + api_key)
 arr.then(result => {
     let commentData = result.data;

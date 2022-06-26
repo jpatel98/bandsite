@@ -7,8 +7,6 @@
     margin-top: 0;
     padding-top: 0;
     padding-bottom: 1rem;
-    
-
     &__title{
         padding: 2rem 1rem 0 1rem;
         margin: 0;
@@ -23,39 +21,32 @@
             margin-right: 1.5rem;
         }
     }
-
     &__contact{
         padding: 1.5rem 1rem 0 1rem;
         display: flex;
         flex-direction: column;
-
         &-name{
             p{
                 margin: 0;
                 padding: 0;
             }
         }
-
         &-email{
             a {
                 text-decoration: none;
                 color: $alabaster;
             }
-        }
-        
+        }       
     }
-
     &-container{
         display: flex;
         flex-direction: column;
     }
-
     &__logo{
         margin: 5rem 0 0 1rem;
         color: $alabaster;
     }
 }
-
 //tablet layout
 @include tablet {
     .footer {
@@ -71,12 +62,10 @@
         &__icon{
             padding: 3rem 0 2.25rem 2.25rem;
         }
-
         &-container{
             flex-direction: row;
             justify-content: space-around;
-            align-items: center;
-            
+            align-items: center;          
         }
         &__contact{
             &-address{
@@ -95,11 +84,9 @@
             margin: 0;
             padding-bottom: 2.25rem;
             text-align: center;
-
         }   
     }
 }
-
 // desktop layout
 @include desktop {
     .footer {
@@ -109,7 +96,6 @@
         }
         &-container{
             justify-content: flex-start;
-            
         }
         &__contact{
             padding: 0 3rem 1rem 0;

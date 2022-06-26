@@ -45,7 +45,6 @@ function displayShows(arr) {
         showsParent.classList.add("shows__new");
         showsContainer.appendChild(showsParent);
 
-
         //Date heading
         const dateTitle = document.createElement("h4");
         dateTitle.classList.add("shows__date");
@@ -111,3 +110,4 @@ showDatesArr.then(result => {
 showDatesArr.catch(error => {
     console.log(error)
 });
+

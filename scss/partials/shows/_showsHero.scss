@@ -16,7 +16,6 @@
         padding: 1.5rem 1rem;
         margin: 0;
     }
-
     &__container{
         padding: 0;
         margin: 0;
@@ -26,8 +25,6 @@
         
     }
 }
-
-
 @include tablet {
     .hero{
         &__opacity {
@@ -38,8 +35,9 @@
             &-song{
                 width: 50vw;
             }
+        }
     }
-}
+}   
 
 @include desktop {
     .hero{
@@ -58,4 +56,4 @@
             }
         }
     }
-} }
+} 
