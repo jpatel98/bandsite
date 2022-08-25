@@ -1,7 +1,8 @@
 <p align="center"><img src="assets/Logo/bandsite-readme-logo.png" align="center"></p>
 
 ## About
-A rockband's website used to show proficiency of flexbox, SASS, BEM, responsive design, APIs, and javascript fundamentals. 
+A rockband's website to used to convey their story, allow fans to comment and follow tour dates.
+Created to demonstrate proficiency of flexbox, SASS, BEM, responsive design, APIs, and javascript fundamentals. 
 
 
 ## Key Learnings
@@ -10,8 +11,8 @@ A rockband's website used to show proficiency of flexbox, SASS, BEM, responsive 
 - Became proficient in the CSS layout, Flexbox, SASS preprocessor, and the principles of responsive and mobile-first design.
 - Used Axios for API HTTP requests.
 - Corrected and included minimal design discrepancies found in the mock-ups.
-## Installation
 
+## Installation
 ### Clone
 
 - Clone this repo to your local machine using `git@github.com:jpatel98/jigar-patel-bandsite.git`
