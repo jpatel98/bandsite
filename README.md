@@ -15,7 +15,7 @@ Created to demonstrate proficiency of flexbox, SASS, BEM, responsive design, API
 ## Installation
 ### Clone
 
-- Clone this repo to your local machine using `git@github.com:jpatel98/jigar-patel-bandsite.git`
+- Clone this repo to your local machine using `git@github.com:jpatel98/bandsite.git`
 
 ## Deployment
 [![Netlify Status](https://api.netlify.com/api/v1/badges/593ffb42-bdb0-4620-8044-0936991a42cb/deploy-status)](https://app.netlify.com/sites/bandsite-tunes/deploys)
